@@ -20,11 +20,11 @@ class UnityParallelEnv(UnityPettingzooBaseEnv, ParallelEnv):
         """
         super().__init__(env, seed)
 
-    def reset(self) -> Dict[str, Any]:
+    def reset(self, seed=None) -> Dict[str, Any]:
         """
         Resets the environment.
         """
-        super().reset()
+        super().reset(seed)
 
         return self._observations
 

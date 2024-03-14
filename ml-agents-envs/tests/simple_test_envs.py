@@ -273,7 +273,7 @@ class SimpleEnvironment(BaseEnv):
             self.rewards[name] += reward
             self.step_result[name] = self._make_batched_step(name, done, reward, 0.0)
 
-    def reset(self) -> None:  # type: ignore
+    def reset(self, seed=None) -> None:  # type: ignore
         for name in self.names:
             self._reset_agent(name)
             self.step_result[name] = self._make_batched_step(name, False, 0.0, 0.0)
@@ -483,7 +483,7 @@ class MultiAgentEnvironment(BaseEnv):
                             name, done, reward, 0.0
                         )
 
-    def reset(self) -> None:  # type: ignore
+    def reset(self, seed=None) -> None:  # type: ignore
         for name in self.names:
             for i in range(self.num_agents):
                 name_and_num = name + str(i)
@@ -497,7 +497,7 @@ class MultiAgentEnvironment(BaseEnv):
             for i in range(self.num_agents):
                 name_and_num = name + str(i)
                 self.dones[name_and_num] = False
-                self.envs[name_and_num].reset()
+                self.envs[name_and_num].reset(seed)
 
     @property
     def reset_parameters(self) -> Dict[str, str]:
