@@ -154,7 +154,7 @@ MonoBehaviour:
   MaxStep: 1000
   speed: 1
   target: {fileID: 4857571497394729794}
-  distanceRequired: 1.5
+  distanceRequired: 1.42
   groundMeshRenderer: {fileID: 4144860200805930766}
   successMat: {fileID: 2100000, guid: 6b15c0132af9c144f9a065710d393c58, type: 2}
   FailureMat: {fileID: 2100000, guid: aac1d19378efff940a76179542466c95, type: 2}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 8
-    NumStackedVectorObservations: 1
+    NumStackedVectorObservations: 2
     m_ActionSpec:
       m_NumContinuousActions: 2
       BranchSizes: 
@@ -186,9 +186,9 @@ MonoBehaviour:
   m_BehaviorType: 0
   m_BehaviorName: FindTargetBehaviour
   TeamId: 0
-  m_UseChildSensors: 1
+  m_UseChildSensors: 0
   m_UseChildActuators: 1
-  m_DeterministicInference: 0
+  m_DeterministicInference: 1
   m_ObservableAttributeHandling: 0
 --- !u!114 &6463923279952507828
 MonoBehaviour:

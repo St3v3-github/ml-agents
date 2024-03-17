@@ -88,24 +88,32 @@ public class FindTargetAgent : Agent
         playerRigidbody.AddForce(controlSignal * speed);
 
         // Rewards
-        float distanceToTarget = Vector3.Distance(this.transform.localPosition, target.transform.localPosition);
+        float distanceToTarget = Vector3.Distance(transform.localPosition, target.transform.localPosition);
 
         // Reached target
         if (distanceToTarget < distanceRequired)
         {
-            SetReward(1.0f);
+            SetReward(1f);
             EndEpisode();
 
             StartCoroutine(SwapGroundMaterial(successMat, 0.5f));
         }
 
-        // Fell off platform
-        else if (this.transform.localPosition.y < 0)
+/*        if (distanceToTarget > distanceRequired)
         {
+            SetReward(0.05f);
+            
+        }*/
+
+        // Fell off platform
+        else if (transform.localPosition.y < 0)
+        {
+            SetReward(-1f);
             EndEpisode();
 
             StartCoroutine(SwapGroundMaterial(FailureMat, 0.5f));
         }
+
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
