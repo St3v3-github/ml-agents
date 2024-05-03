@@ -6,7 +6,7 @@ using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 using static UnityEngine.GraphicsBuffer;
 
-public class FindTargetAgent : Agent
+public class ObstacleCourseAgent : Agent
 {
     #region Exposed Instance Variables
 
@@ -15,6 +15,12 @@ public class FindTargetAgent : Agent
 
     [SerializeField]
     private GameObject target = null;
+/*
+    [SerializeField]
+    private GameObject ObstacleCourse = null;
+
+    [SerializeField]
+    private GameObject ObstacleCourseInstance = null;*/
 
     [SerializeField]
     private float distanceRequired = 1.5f;
@@ -44,6 +50,9 @@ public class FindTargetAgent : Agent
         playerRigidbody = GetComponent<Rigidbody>();
         originalPosition = transform.localPosition;
         originalTargetPosition = target.transform.localPosition;
+
+/*        ObstacleCourseInstance = Instantiate(ObstacleCourse);*/
+        
     }
 
     public override void OnEpisodeBegin()
@@ -57,11 +66,11 @@ public class FindTargetAgent : Agent
         transform.LookAt(target.transform);
         target.transform.localPosition = originalTargetPosition;
         transform.localPosition = originalPosition;
-        transform.localPosition = new Vector3(Random.Range(-4, 4), originalPosition.y, originalPosition.z);
+        transform.localPosition = new Vector3(Random.Range(-2, 2), originalPosition.y, originalPosition.z);
 
-        target.transform.localPosition = new Vector3(Random.value * 8 - 4,
+        target.transform.localPosition = new Vector3(Random.value * 2 - 1,
                                            0.5f,
-                                           Random.value * 8 - 4);
+                                           Random.value * 2 - 1);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -91,7 +100,7 @@ public class FindTargetAgent : Agent
         float distanceToTarget = Vector3.Distance(transform.localPosition, target.transform.localPosition);
 
         // Reached target
-        if (distanceToTarget < distanceRequired)
+        if (distanceToTarget <= distanceRequired)
         {
             SetReward(1f);
             EndEpisode();
@@ -99,22 +108,20 @@ public class FindTargetAgent : Agent
             StartCoroutine(SwapGroundMaterial(successMat, 0.5f));
         }
 
-/*        if (distanceToTarget > distanceRequired)
+        if (transform.localPosition.y >= 0)
         {
-            SetReward(0.05f);
-            
-        }*/
+            SetReward(+0.01f);
+        }
 
-        // Fell off platform
-        else if (transform.localPosition.y < 0)
+        if (transform.localPosition.y < 0)
         {
             SetReward(-1f);
             EndEpisode();
-
             StartCoroutine(SwapGroundMaterial(FailureMat, 0.5f));
         }
-
     }
+
+
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {

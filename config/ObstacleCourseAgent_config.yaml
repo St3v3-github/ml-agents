@@ -1,5 +1,5 @@
 behaviors:
-  FindTarget:
+  ObstacleCourseAgent:
     trainer_type: ppo
     hyperparameters:
       batch_size: 10

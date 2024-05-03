@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8fafec333a650a04a915c027fdf4bc70
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - target: {instanceID: 0}
+  - ObstacleCourse: {instanceID: 0}
+  - ObstacleCourseInstance: {instanceID: 0}
+  - groundMeshRenderer: {instanceID: 0}
+  - successMat: {instanceID: 0}
+  - FailureMat: {instanceID: 0}
+  - defaultMat: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
