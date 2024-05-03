@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/AT/Scenes/AgentTestObstacles.unity
+    guid: 36adc3f98ea2e7045b911950e2dfee7a
   m_configObjects: {}
