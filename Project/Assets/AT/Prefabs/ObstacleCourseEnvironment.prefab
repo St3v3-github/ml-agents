@@ -167,7 +167,7 @@ MonoBehaviour:
   groundMeshRenderer: {fileID: 4503915471065198275}
   successMat: {fileID: 2100000, guid: 6b15c0132af9c144f9a065710d393c58, type: 2}
   FailureMat: {fileID: 2100000, guid: aac1d19378efff940a76179542466c95, type: 2}
-  defaultMat: {fileID: 2100000, guid: d1629826843ebd846985fb98e1ad40fb, type: 2}
+  defaultMat: {fileID: 2100000, guid: 8542bd6ffa7d2b74a8c4e44debab6e46, type: 2}
 --- !u!1001 &2431456667696307154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,16 +191,36 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 32.36
       objectReference: {fileID: 0}
+    - target: {fileID: 2251619179774948625, guid: 6bbda6c8c1a18474dbc75d5659d1eafc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8542bd6ffa7d2b74a8c4e44debab6e46, type: 2}
     - target: {fileID: 3841956300570098517, guid: 6bbda6c8c1a18474dbc75d5659d1eafc,
         type: 3}
       propertyPath: m_Name
       value: ObstacleCourse
       objectReference: {fileID: 0}
+    - target: {fileID: 4170512736751187775, guid: 6bbda6c8c1a18474dbc75d5659d1eafc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8542bd6ffa7d2b74a8c4e44debab6e46, type: 2}
     - target: {fileID: 5334154586436557984, guid: 6bbda6c8c1a18474dbc75d5659d1eafc,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 52.11
       objectReference: {fileID: 0}
+    - target: {fileID: 6370870468615739594, guid: 6bbda6c8c1a18474dbc75d5659d1eafc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8542bd6ffa7d2b74a8c4e44debab6e46, type: 2}
+    - target: {fileID: 6958336152890708553, guid: 6bbda6c8c1a18474dbc75d5659d1eafc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8542bd6ffa7d2b74a8c4e44debab6e46, type: 2}
     - target: {fileID: 7499578411049602372, guid: 6bbda6c8c1a18474dbc75d5659d1eafc,
         type: 3}
       propertyPath: m_LocalPosition.z
